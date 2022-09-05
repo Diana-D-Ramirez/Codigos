@@ -8,7 +8,7 @@ import re
 #Lipids, Protein, Lignin, Total Solids and Volatile Solids in that order without header
 
 
-x1 = pd.read_csv("EXT.csv",header=None)
+x1 = pd.read_csv("DataSet.csv",header=None)
 x1 = x1.to_numpy()
 x1 = np.transpose(x1)
 
