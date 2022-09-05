@@ -1,14 +1,25 @@
-#CREATED 23/08/2022
-
 import numpy as np
 import pandas as pd
 import re
+
+
+#This code estimates the Methane Yield of a specific dataset
+#The dataset must contain five variables distributed in columns;
+#Lipids, Protein, Lignin, Total Solids and Volatile Solids in that order without header
+
 
 x1 = pd.read_csv("EXT.csv",header=None)
 x1 = x1.to_numpy()
 x1 = np.transpose(x1)
 
-#===============================================================================================
+#====================================================================================================
+#
+# Weights and biases (w and b) are the learnable parameters of the neural network
+#
+#                     OUTPUT =  Σ ( weight * input ) + bias
+#
+#====================================================================================================
+
  
 # Input 1
 In_xoffset =  np.array([[0.0],
@@ -78,7 +89,7 @@ y = np.multiply(y,In_gain[...,:])
 y = y + In_ymin[...,:]
 
 
-# Layer 1    #b1expand
+# Layer 1    #b1 expand Q times and its sumed by the product of W1 and y
 a1=np.repeat(b1,Q,1) + np.dot(W1,y)
 
  
@@ -89,7 +100,7 @@ def tanh_function(a1):
 
 a1=tanh_function(a1)
     
-#Layer 2
+#Layer 2    #b2 expand Q times and its sumed by the product of W2 and transfer function resutl
 a2=np.repeat(b2,Q) + np.dot(W2,a1)
 
 
@@ -97,10 +108,10 @@ a2=np.repeat(b2,Q) + np.dot(W2,a1)
 x0 = a2-Out_ymin[...,:]
 x0 = x0 / Out_gain[...,:]
 x0 = x0 + Out_xoffset[...,:]
-#print("x0=",x0)
+#where x0 is the estimated value
 
 #===============================================================================
-#   Convirtiendo el resultado a lista para el manejo de datos requerido     #
+#   Adding x0 to a list   #
 
 lst = []
 
@@ -115,7 +126,9 @@ lst = str(lst)[1:-1]
 print("\nEstimated Methane Yield =\n\n",lst)
 
 #===============================================================================
-####                          Saving in a CSV                     ######
+####                Saving in a CSV                 ######
+
 
 with open("RESULTS.csv","w") as file:
     file.write(lst + "\n")
+
