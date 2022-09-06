@@ -3,7 +3,7 @@ import pandas as pd
 import re
 
 
-#This code estimates the Methane Yield of a specific dataset
+#This code estimates the Methane Yield of a specific dataset from an Anaerobic Digestion model
 #The dataset must contain five variables distributed in columns;
 #Lipids, Protein, Lignin, Total Solids and Volatile Solids in that order without header
 
