@@ -7,6 +7,7 @@ import re
 #The dataset must contain five variables distributed in columns;
 #Lipids, Protein, Lignin, Total Solids and Volatile Solids in that order without header
 #If you use this model, please cite: 
+#D. Dominguillo-Ramírez, J. Aburto, H. León-Santiesteban, and E. Martínez-Hernández, “Neural network model for biomethane yield estimation from biomass composition (total solids, volatile solids, lipids, protein, and lignin),”2022.
 
 
 x1 = pd.read_csv("DataSet.csv",header=None)
