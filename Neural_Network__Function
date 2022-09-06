@@ -6,6 +6,7 @@ import re
 #This code estimates the Methane Yield of a specific dataset from an Anaerobic Digestion model
 #The dataset must contain five variables distributed in columns;
 #Lipids, Protein, Lignin, Total Solids and Volatile Solids in that order without header
+#If you use this model, please cite: 
 
 
 x1 = pd.read_csv("DataSet.csv",header=None)
