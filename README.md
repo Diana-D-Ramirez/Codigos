@@ -8,5 +8,5 @@ Experimental methane Yield values are in [L/g VS] in Target-Matrix file for its 
 
 
 If you use this model, please cite: 
-D. Dominguillo-Ramirez, J. Aburto, H. León-Santiesteban, and E. Martínez-Hernández, “Neural network model for biomethane yield estimation from biomass composition (total solids, volatile solids, lipids, protein, and lignin),”2022.
+Dominguillo-Ramírez D, Aburto J, Hugo Leon-Santiesteban H, Martinez-Hernandez E. Neural network model for predicting the biomethane yield in an anaerobic digester using biomass composition profiles. Fuel 2023;344:128053. https://doi.org/10.1016/j.fuel.2023.128053.
 
